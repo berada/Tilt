@@ -22,8 +22,8 @@ class ListFragment : FragmentWithOptionsMenu(), StageRecyclerViewAdapter.TodoIte
     private fun setupRecyclerView(view: View) {
         stageRecyclerViewAdapter = StageRecyclerViewAdapter()
         stageRecyclerViewAdapter.itemClickListener = this
-        val rvAdList = view.findViewById<RecyclerView>(R.id.rvStageList)
-        rvAdList.adapter = stageRecyclerViewAdapter
+        val rvStageList = view.findViewById<RecyclerView>(R.id.rvStageList)
+        rvStageList.adapter = stageRecyclerViewAdapter
     }
 
     override fun onCreateView(

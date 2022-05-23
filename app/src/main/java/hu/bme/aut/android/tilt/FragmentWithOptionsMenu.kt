@@ -5,7 +5,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
-open class FragmentWithOptionsMenu : Fragment() {
+open class FragmentWithOptionsMenu : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
