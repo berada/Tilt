@@ -24,6 +24,10 @@
         <argument
             android:name="nameToShow"
             app:argType="string" />
+        <action
+            android:id="@+id/action_create"
+            app:destination="@id/createFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -42,4 +46,9 @@
     <action
         android:id="@+id/action_game"
         app:destination="@id/gameFragment" />
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="hu.bme.aut.android.tilt.CreateFragment"
+        android:label="fragment_create"
+        tools:layout="@layout/fragment_create" />
 </navigation>

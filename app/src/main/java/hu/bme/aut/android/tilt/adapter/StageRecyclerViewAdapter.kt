@@ -3,6 +3,7 @@ package hu.bme.aut.android.tilt.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -25,7 +26,7 @@ class StageRecyclerViewAdapter : ListAdapter<Stage, StageRecyclerViewAdapter.Vie
 
     private lateinit var binding: StageListItemBinding;
 
-    private var stageList = emptyList<Stage>()
+    private var stageList: List<Stage> = emptyList()
 
     var itemClickListener: TodoItemClickListener? = null
 
@@ -35,15 +36,16 @@ class StageRecyclerViewAdapter : ListAdapter<Stage, StageRecyclerViewAdapter.Vie
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val stage = stageList[position]
-
-        holder.stage = stage
-        holder.tvItemNum.text = stage.id.toString()
-        holder.tvItemRating.text = "${stage.rating.toString()} / 5"
-        holder.tvItemNick.text = "${stage.hs_nick} | ${stage.hs_moves.toString()} moves"
+        val tmpStage = stageList[position]
+        holder.stage = tmpStage
+        holder.tvItemNum.text = tmpStage.id.toString()
+        holder.tvItemRating.text = "${tmpStage.rating.toString()} / 5"
+        holder.tvItemNick.text = "${tmpStage.hs_nick} | ${tmpStage.hs_moves.toString()} moves"
     }
 
-    fun addItem(stage: Stage) {
+    fun addItem(stage: Stage?) {
+        stage ?: return
+
         stageList += stage
         submitList(stageList)
     }

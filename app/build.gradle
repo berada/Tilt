@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'com.google.gms.google-services'
+
 }
 
 android {
@@ -38,12 +39,17 @@ android {
 }
 
 dependencies {
+
     implementation 'com.google.firebase:firebase-firestore-ktx'
-    implementation 'com.flaviofaria:kenburnsview:1.0.7'
-    implementation 'com.github.bumptech.glide:glide:4.13.1'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation platform('com.google.firebase:firebase-bom:29.3.1')
     implementation 'com.google.firebase:firebase-auth-ktx'
+
+    implementation 'com.flaviofaria:kenburnsview:1.0.7'
+    implementation 'com.github.bumptech.glide:glide:4.13.1'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-auth:21.0.4'
+
     def nav_version = "2.4.2"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"

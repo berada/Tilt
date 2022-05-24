@@ -11,37 +11,7 @@ class StageRepository {
             10,
             "Aladár",
             ""
-        ),
-        Stage(
-            2,
-            2,
-            9,
-            "Béla",
-            ""
-        ),
-
-        Stage(
-            3,
-            3,
-            9,
-            "Cecil",
-            ""
-        ),
-
-        Stage(
-            4,
-            4,
-            9,
-            "Dénes",
-            ""
-        ),
-        Stage(
-            5,
-            5,
-            9,
-            "Elemér",
-            ""
-    )
+        )
     )
 
     fun getAll() = MutableLiveData(stages)

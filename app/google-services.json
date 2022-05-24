@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "145199063080",
-    "project_id": "tilt-3f5e9",
-    "storage_bucket": "tilt-3f5e9.appspot.com"
+    "project_number": "533555019446",
+    "project_id": "tilt-3bd59",
+    "storage_bucket": "tilt-3bd59.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:145199063080:android:2d532abb416a337d48151d",
+        "mobilesdk_app_id": "1:533555019446:android:648d58f1f4834e635a7017",
         "android_client_info": {
           "package_name": "hu.bme.aut.android.tilt"
         }
       },
       "oauth_client": [
         {
-          "client_id": "145199063080-9fbaj6f0rc2i5stl6braom5mbs9jvqq4.apps.googleusercontent.com",
+          "client_id": "533555019446-4p67hf4boatjbkkbro0u487c3or2s0o5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDrPH48oEMzF8QCjcA_3-JPXTNZH4g17fg"
+          "current_key": "AIzaSyAAvYvkC0w6Cn364-4qXbUPRb6wzM8KUWQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "145199063080-9fbaj6f0rc2i5stl6braom5mbs9jvqq4.apps.googleusercontent.com",
+              "client_id": "533555019446-4p67hf4boatjbkkbro0u487c3or2s0o5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
