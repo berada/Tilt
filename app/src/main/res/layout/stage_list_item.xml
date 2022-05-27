@@ -44,12 +44,4 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:paddingTop="20dp"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
-
 </LinearLayout>

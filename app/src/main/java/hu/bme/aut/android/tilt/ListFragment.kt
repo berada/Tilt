@@ -40,6 +40,7 @@ class ListFragment : FragmentWithOptionsMenu(), StageRecyclerViewAdapter.TodoIte
             "Üdvözlünk, ${ListFragmentArgs.fromBundle(requireArguments()).nameToShow}"
         binding.btnCreateStage.setOnClickListener { btnCreateStageClick() }
         initStagesListener()
+
         return binding.root
     }
 
@@ -49,7 +50,7 @@ class ListFragment : FragmentWithOptionsMenu(), StageRecyclerViewAdapter.TodoIte
     }
 
     override fun onItemClick(stage: Stage) {
-        val action = ListFragmentDirections.actionGame(stage.id!!)
+        val action = ListFragmentDirections.actionGame(stage.id.toString())
         findNavController().navigate(action)
     }
 
@@ -65,8 +66,8 @@ class ListFragment : FragmentWithOptionsMenu(), StageRecyclerViewAdapter.TodoIte
                 for (dc in snapshots!!.documentChanges) {
                     when (dc.type) {
                         DocumentChange.Type.ADDED -> stageRecyclerViewAdapter.addItem(dc.document.toObject<Stage>())
-                        DocumentChange.Type.MODIFIED -> Toast.makeText(context, dc.document.data.toString(), Toast.LENGTH_SHORT).show()
-                        DocumentChange.Type.REMOVED -> Toast.makeText(context, dc.document.data.toString(), Toast.LENGTH_SHORT).show()
+                        //DocumentChange.Type.MODIFIED -> Toast.makeText(context, dc.document.data.toString(), Toast.LENGTH_SHORT).show()
+                        //DocumentChange.Type.REMOVED -> Toast.makeText(context, dc.document.data.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
