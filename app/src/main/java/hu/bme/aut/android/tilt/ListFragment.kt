@@ -37,7 +37,7 @@ class ListFragment : FragmentWithOptionsMenu(), StageRecyclerViewAdapter.TodoIte
         binding = FragmentListBinding.inflate(layoutInflater, container, false)
         setupRecyclerView(binding.root)
         binding.tvWelcome.text =
-            "Üdvözlünk, ${ListFragmentArgs.fromBundle(requireArguments()).nameToShow}"
+            "Welcome, ${ListFragmentArgs.fromBundle(requireArguments()).nameToShow}"
         binding.btnCreateStage.setOnClickListener { btnCreateStageClick() }
         initStagesListener()
 

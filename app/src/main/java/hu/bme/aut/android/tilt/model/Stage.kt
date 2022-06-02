@@ -10,5 +10,7 @@ data class Stage(
 
     val hs_nick: String? = null,
 
+    val ratings_count: Long? = null,
+
     val stage: String? = null,
 )

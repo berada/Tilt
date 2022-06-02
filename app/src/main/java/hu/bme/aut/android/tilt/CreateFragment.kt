@@ -46,7 +46,7 @@ class CreateFragment : BaseFragment() {
 
     private fun uploadStage() {
         var newId : String = binding.tvId.text.toString()
-        val newStage = Stage(newId.toLong(), 0, 0, "NA",binding.etStageString.text.toString())
+        val newStage = Stage(newId.toLong(), 0, 0, "NA",0,binding.etStageString.text.toString())
         val db = Firebase.firestore
 
         //maxId növelése

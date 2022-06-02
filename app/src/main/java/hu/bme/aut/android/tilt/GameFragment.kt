@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import hu.bme.aut.android.tilt.ListFragmentDirections.Companion.actionCreate
 import hu.bme.aut.android.tilt.databinding.FragmentGameBinding
 import hu.bme.aut.android.tilt.model.Stage
 import hu.bme.aut.android.tilt.model.TiltModel
@@ -44,6 +46,7 @@ class GameFragment : FragmentWithOptionsMenu() {
                         document.get("rating").toString().toLong(),
                         document.get("hs_moves").toString().toLong(),
                         document.get("hs_nick").toString(),
+                        document.get("ratings_count").toString().toLong(),
                         document.get("stage").toString()
                     )
 
@@ -60,11 +63,17 @@ class GameFragment : FragmentWithOptionsMenu() {
 
                     binding.tvId.text = "Stage: ${stage.id}"
                     binding.btRestart.setOnClickListener { init() }
+                    binding.btnRating.setOnClickListener { rateOnClick() }
                     swipeSetUp()
                 }
             }
 
         return binding.root
+    }
+
+    fun rateOnClick() {
+        val action = GameFragmentDirections.actionResult(stage.id.toString())
+        findNavController().navigate(action)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -79,6 +88,7 @@ class GameFragment : FragmentWithOptionsMenu() {
         binding.tvMoves.text = "Moves: $moves"
         binding.tiltView.visibility = View.VISIBLE
         binding.tvResult.visibility = View.GONE
+        binding.btnRating.visibility = View.GONE
         binding.tiltView.invalidate()
     }
 
@@ -95,6 +105,7 @@ class GameFragment : FragmentWithOptionsMenu() {
                         "hs_nick" to userEmail.toString(),
                         "id" to stage.id,
                         "rating" to stage.rating,
+                        "ratings_count" to stage.ratings_count,
                         "stage" to stage.stage
                     )
                     val db = Firebase.firestore
@@ -106,6 +117,7 @@ class GameFragment : FragmentWithOptionsMenu() {
                     binding.tvResult.text = "Congrats! You have won!"
                 }
             }
+            binding.btnRating.visibility = View.VISIBLE
             binding.tvResult.visibility = View.VISIBLE
             binding.tiltView.visibility = View.GONE
         }
